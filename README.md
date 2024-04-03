@@ -85,6 +85,7 @@ The application's structure is designed for scalability and ease of navigation:
 
 ## Technical Stack
 
+- **Build Tool:** Nx for monorepo management, providing a set of extensible dev tools for building Angular, React applications.
 - **Framework:** Angular for building scalable and maintainable applications.
 - **Styling:** Tailwind CSS for utility-first CSS management.
 - **State Management:** NgRx for managing application state, offering Redux-like state management.
