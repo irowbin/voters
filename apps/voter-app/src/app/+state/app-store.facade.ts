@@ -21,6 +21,18 @@ export class AppStoreFacade {
     select(AppStoreSelectors.getStateFromAppStore('notifications'))
   )
 
+  public selectTotalVote$ = this.store.pipe(
+    select(AppStoreSelectors.selectTotalVotes)
+  )
+
+  public selectCompetingCandidate$ = this.store.pipe(
+    select(AppStoreSelectors.selectCompetingCandidates)
+  )
+
+  public selectCurrentWinning$ = this.store.pipe(
+    select(AppStoreSelectors.selectCurrentWinning)
+  )
+
   public addVoter(voter: Person): void {
     this.store.dispatch(AppStoreActions.addVoter({ voter }))
   }

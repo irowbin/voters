@@ -82,6 +82,9 @@ export const castVoteForCandidate = (
     (candidate) => candidate.id === candidateId
   )
 
+  const totalVotes = (candidates: Person[]) =>
+    candidates.reduce((total, candidate) => total + (candidate.votes || 0), 0)
+
   if (!voterToUpdate || !candidateToUpdate) {
     return {
       ...state,
@@ -96,19 +99,22 @@ export const castVoteForCandidate = (
     }
   }
 
+  const candidates = state.candidates.map((candidate) =>
+    candidate.id === candidateId
+      ? {
+          ...candidate,
+          votes: (candidate.votes || 0) + 1,
+        }
+      : candidate
+  )
+
   return {
     ...state,
     voters: state.voters.map((voter) =>
       voter.id === voterId ? { ...voter, voted: true } : voter
     ),
-    candidates: state.candidates.map((candidate) =>
-      candidate.id === candidateId
-        ? {
-            ...candidate,
-            votes: (candidate.votes || 0) + 1,
-          }
-        : candidate
-    ),
+    candidates,
+    totalVotes: totalVotes(candidates),
     notifications: [
       ...state.notifications,
       {

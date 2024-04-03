@@ -15,4 +15,5 @@ export interface AppStoreState {
   voters: Person[]
   candidates: Person[]
   notifications: AppNotification[]
+  totalVotes: number
 }

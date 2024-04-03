@@ -3,13 +3,19 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  inject,
   Input,
+  OnDestroy,
+  OnInit,
   Output,
+  signal,
   ViewChild,
 } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Person } from '../../models'
 import { FormsModule } from '@angular/forms'
+import { AppStoreFacade } from '../../+state/app-store.facade'
+import { Subject, combineLatest, takeUntil, filter } from 'rxjs'
 
 @Component({
   selector: 'app-voter-list',
@@ -20,6 +26,7 @@ import { FormsModule } from '@angular/forms'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VoterListComponent {
+
   @ViewChild('entityNameInput')
   public entityNameInput: ElementRef<HTMLInputElement>
 
@@ -41,6 +48,7 @@ export class VoterListComponent {
   public showInput = false
 
   public name = ''
+
 
   public newEntry(): void {
     this.showInput = !this.showInput
