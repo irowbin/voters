@@ -6,7 +6,7 @@
   </div>
   <div
     class="col-span-1 flex flex-col items-center justify-start p-1 shadow-md rounded-lg">
-    <h2 class="font-bold mb-2">Winning Candidate(s)</h2>
+    <h2 class="font-bold mb-2">Winning Candidate</h2>
     <div class="text-left" *ngIf="currentWinning()">
       {{ currentWinning()?.name }}: {{ currentWinning()?.votes }}
     </div>
@@ -14,7 +14,7 @@
   </div>
   <div
     class="col-span-1 flex flex-col items-center justify-start p-1 shadow-md rounded-lg">
-    <h2 class="font-bold mb-2">Competing Candidates</h2>
+    <h2 class="font-bold mb-2">Competing Candidate(s)</h2>
     <pre class="whitespace-pre-line text-left max-h-20 overflow-y-auto">{{
       competingCandidates() || 'N/A'
     }}</pre>
