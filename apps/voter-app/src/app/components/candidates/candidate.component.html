@@ -1,0 +1,6 @@
+<app-voter-list
+  heading="Candidates"
+  [data]="candidates()"
+  [fieldName]="fieldNames"
+  (add)="addCandidate($event)"
+  dataType="candidate" />

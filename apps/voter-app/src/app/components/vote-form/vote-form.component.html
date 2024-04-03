@@ -1,0 +1,32 @@
+<div>
+  <div class="font-bold mb-2">Vote!</div>
+  <div class="flex flex-col mb-4">
+    <label for="voterSelect" class="mb-2">I am</label>
+    <select
+      id="voterSelect"
+      class="border rounded p-2"
+      [(ngModel)]="selectedVoter">
+      <option *ngFor="let voter of voters()" [ngValue]="voter">
+        {{ voter.name }}
+      </option>
+    </select>
+  </div>
+  <div class="flex flex-col mb-4">
+    <label for="candidateSelect" class="mb-2">I vote for</label>
+    <select
+      id="candidateSelect"
+      class="border rounded p-2"
+      [(ngModel)]="selectedCandidate">
+      <option *ngFor="let candidate of candidates()" [ngValue]="candidate">
+        {{ candidate.name }}
+      </option>
+    </select>
+  </div>
+  <button
+    [disabled]="!selectedVoter || !selectedCandidate"
+    [ngClass]="{ 'opacity-40': !selectedVoter || !selectedCandidate }"
+    class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+    (click)="castVote()">
+    Submit
+  </button>
+</div>

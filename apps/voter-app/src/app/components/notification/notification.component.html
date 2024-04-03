@@ -1,0 +1,38 @@
+<div
+  *ngIf="notifications()?.length"
+  [@fadeInOut]="notifications()?.length"
+  class="fixed top-5 z-50 right-5 space-y-2"
+  id="toast-container">
+  @for(notification of notifications(); track notification.message){
+  <div
+    class="w-full max-w-xs border text-sm py-2 pl-4 pr-8 rounded-lg shadow-md relative"
+    [ngClass]="{
+      'bg-green-100 border-green-400 text-green-800':
+        notification.type === 'success' || !notification.type,
+      'bg-red-100 border-red-400 text-red-800': notification.type === 'error'
+    }"
+    role="alert">
+    {{ notification.message }}
+    <button
+      class="absolute top-0 right-0 mt-2 mr-2"
+      [ngClass]="{
+        'text-green-800': notification.type === 'success' || !notification.type,
+        'text-red-800': notification.type === 'error'
+      }"
+      (click)="removeNotification(notification.message)">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  }
+</div>
