@@ -44,6 +44,9 @@ export class VoteFormComponent implements OnInit, OnDestroy {
       this.selectedVoter.id,
       this.selectedCandidate.id
     )
+
+    this.selectedVoter = null
+    this.selectedCandidate = null
   }
 
   #selectVotersCandidate(): void {

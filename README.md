@@ -15,6 +15,10 @@
 - **Duplicate Prevention:** The system ensures that each voter and candidate is unique, preventing duplicates.
 
 - **Notifications:** Users receive notifications for successful actions or errors, such as trying to add a duplicate entry.
+
+- **Responsive Design:** The application is completely responsive, ensuring that when viewed on mobile, the blocks wrap accordingly.
+
+
 ## Repository and Deployment
 
 - **GitHub Repository:** Access the source code, report issues, or contribute to the project on GitHub: [https://github.com/irowbin/voters](https://github.com/irowbin/voters).
