@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "start": "nx serve voter-app",
-    "start:api": "nx serve voter-api",
     "build": "nx build voter-app",
     "format": "prettier --write apps/**/*.{ts,html,scss,json} libs/**/*.{ts,html,scss,json}",
     "lint": "nx run-many --target=lint --all --fix",
