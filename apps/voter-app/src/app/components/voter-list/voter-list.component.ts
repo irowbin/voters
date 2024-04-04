@@ -26,7 +26,6 @@ import { Subject, combineLatest, takeUntil, filter } from 'rxjs'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VoterListComponent {
-
   @ViewChild('entityNameInput')
   public entityNameInput: ElementRef<HTMLInputElement>
 
@@ -48,7 +47,6 @@ export class VoterListComponent {
   public showInput = false
 
   public name = ''
-
 
   public newEntry(): void {
     this.showInput = !this.showInput

@@ -49,9 +49,7 @@ export class VotingStatsComponent implements OnInit, OnDestroy {
         this.totalVotes.set(totalVotes)
         this.currentWinning.set(currentWinning)
         this.competingCandidates.set(
-          competingCandidates
-            .map((c) => `${c.name}: ${c.votes}`)
-            .join(',\n ')
+          competingCandidates.map((c) => `${c.name}: ${c.votes}`).join(',\n ')
         )
       })
   }

@@ -18,7 +18,6 @@ export const initialAppStoreState: AppStoreState = {
   voters: getVoters(),
   candidates: getCandidates(),
   notifications: [],
-  totalVotes: 0
 }
 
 const reducer = createReducer(

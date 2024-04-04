@@ -4,7 +4,7 @@ import { VoterComponent } from '../voters/voter.component'
 import { VoteFormComponent } from '../vote-form/vote-form.component'
 import { CandidateComponent } from '../candidates/candidate.component'
 import { NotificationComponent } from '../notification/notification.component'
-import { GuidanceComponent } from '../guidance/guidance.component';
+import { GuidanceComponent } from '../guidance/guidance.component'
 
 @Component({
   selector: 'app-voting-container',
@@ -15,12 +15,10 @@ import { GuidanceComponent } from '../guidance/guidance.component';
     VoteFormComponent,
     CandidateComponent,
     NotificationComponent,
-    GuidanceComponent
+    GuidanceComponent,
   ],
   templateUrl: './voting-container.component.html',
   styleUrl: './voting-container.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VotingContainerComponent {
-
-}
+export class VotingContainerComponent {}

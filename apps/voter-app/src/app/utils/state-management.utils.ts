@@ -82,9 +82,6 @@ export const castVoteForCandidate = (
     (candidate) => candidate.id === candidateId
   )
 
-  const totalVotes = (candidates: Person[]) =>
-    candidates.reduce((total, candidate) => total + (candidate.votes || 0), 0)
-
   if (!voterToUpdate || !candidateToUpdate) {
     return {
       ...state,
@@ -114,7 +111,6 @@ export const castVoteForCandidate = (
       voter.id === voterId ? { ...voter, voted: true } : voter
     ),
     candidates,
-    totalVotes: totalVotes(candidates),
     notifications: [
       ...state.notifications,
       {

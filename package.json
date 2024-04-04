@@ -5,9 +5,11 @@
   "private": true,
   "scripts": {
     "start": "nx serve voter-app",
+    "start:api": "nx serve voter-api",
     "build": "nx build voter-app",
     "format": "prettier --write apps/**/*.{ts,html,scss,json} libs/**/*.{ts,html,scss,json}",
-    "lint": "nx run-many --target=lint --all --fix"
+    "lint": "nx run-many --target=lint --all --fix",
+    "prepare": "nx g @nx-dotnet/core:restore"
   },
   "dependencies": {
     "@angular/animations": "~17.3.0",
@@ -40,6 +42,7 @@
     "@angular/language-service": "~17.3.0",
     "@ngrx/schematics": "~17.0.0",
     "@ngrx/store-devtools": "~17.0.0",
+    "@nx-dotnet/core": "^2.2.0",
     "@nx/cypress": "18.2.2",
     "@nx/eslint": "18.2.2",
     "@nx/eslint-plugin": "18.2.2",

@@ -11,7 +11,7 @@ import { VoterListComponent } from '../voter-list/voter-list.component'
 import { filter, Subject, takeUntil } from 'rxjs'
 import { Person } from '../../models'
 import { AppStoreFacade } from '../../+state/app-store.facade'
-import { VotingStatsComponent } from '../voting-stats/voting-stats.component';
+import { VotingStatsComponent } from '../voting-stats/voting-stats.component'
 
 @Component({
   selector: 'app-candidate',
