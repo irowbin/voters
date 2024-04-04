@@ -7,8 +7,7 @@
     "start": "nx serve voter-app",
     "build": "nx build voter-app",
     "format": "prettier --write apps/**/*.{ts,html,scss,json} libs/**/*.{ts,html,scss,json}",
-    "lint": "nx run-many --target=lint --all --fix",
-    "prepare": "nx g @nx-dotnet/core:restore"
+    "lint": "nx run-many --target=lint --all --fix"
   },
   "dependencies": {
     "@angular/animations": "~17.3.0",
