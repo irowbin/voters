@@ -22,6 +22,11 @@ export const addNotification = (
   }
 }
 
+const replacer = (match: string) => match.replace(/\s+/g, '')
+
+const stringMatched = (str1: string, str2: string) =>
+  replacer(str1).trim().toLowerCase() === replacer(str2).trim().toLowerCase()
+
 /**
  * Adds a new entity (voter or candidate) if it does not already exist.
  * @param {AppStoreState} state - The current state of the app store.
@@ -36,8 +41,8 @@ export const addEntity = (
   entityList: 'voters' | 'candidates',
   entityName: string
 ): AppStoreState => {
-  const isEntityExists = state[entityList].some(
-    (e) => e.name.trim().toLowerCase() === entity.name.trim().toLowerCase()
+  const isEntityExists = state[entityList].some((e) =>
+    stringMatched(e.name, entity.name)
   )
 
   if (isEntityExists) {
