@@ -7,7 +7,7 @@
     "start:api": "nx serve voter-api",
     "start:angular": "nx serve voter-app",
     "start": "concurrently \"npm run start:api\" \"npm run start:angular\"",
-    "build": "nx build voter-app",
+    "build": "nx build voter-app && nx build voter-api",
     "format": "prettier --write apps/**/*.{ts,html,scss,json} libs/**/*.{ts,html,scss,json}",
     "lint": "nx run-many --target=lint --all --fix"
   },
